@@ -48,8 +48,9 @@ if sauvegarde == "y" :
     with open("data.json", "w") as json_file:
         json.dump(Sauvegardejson, json_file)
     print("backup successful")
+print("")
 idchannel = int(input("channel id:")) 
-
+print("")
 def listen(token):
     def send_json_request(ws,request):
         ws.send(json.dumps(request))
@@ -61,6 +62,7 @@ def listen(token):
 
     def heartbeat(interval, ws):
         print("calipso work")
+        print("")
         while True:
             time.sleep(interval)
             heartbeatJSON= {
