@@ -12,7 +12,7 @@ def fromage_de_bite(c, n):
 def couille(s, n):
     roquefort = ""
     roquefort += fromage_de_bite("a", n) 
-    roquefort += fromage_de_bite("q", n) 
+    roquefort += fromage_de_bite("H", n) 
     roquefort += fromage_de_bite("o", n) 
     i=0
     while i< len(s):
@@ -43,7 +43,7 @@ def couillevide(s):
             roquefort += fromage_de_bite(message[i], x) 
             i+=1
         x+=1
-        if roquefort[0] == "a" and roquefort[1] == "q" and roquefort[2] == "o" :
+        if roquefort[0] == "a" and roquefort[1] == "H" and roquefort[2] == "o" :
             t=3
             roquefortaas=""
             while t< len(message):
