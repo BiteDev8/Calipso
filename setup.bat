@@ -9,5 +9,6 @@ pip install os
 pip install base64
 pip install json
 pip install websocket
-
+pause
+exit
 
