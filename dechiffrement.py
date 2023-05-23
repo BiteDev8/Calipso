@@ -1,14 +1,12 @@
 from random import random
 import base64
 def fromage_de_bite(c, n):
-    if 'a' <= c and c <= 'z':
-        chiffree = chr((ord(c) + n - ord('a')) % 26 + ord('a')) 
-    elif 'A' <= c and c <= 'Z':
-        chiffree = chr((ord(c) + n - ord('A')) % 26 + ord('A')) 
+    if 'a' <= c <= 'z':
+        return chr((ord(c) + n - ord('a')) % 26 + ord('a'))
+    elif 'A' <= c <= 'Z':
+        return chr((ord(c) + n - ord('A')) % 26 + ord('A'))
     else:
-        chiffree = c
-            
-    return chiffree
+        return c
 def couille(s, n):
     roquefort = ""
     roquefort += fromage_de_bite("a", n) 
@@ -35,21 +33,14 @@ def couillevide(s):
     message_bytes = base64.a85decode(message_bytes)
     message_bytes = base64.b64decode(message_bytes)
     message = message_bytes.decode('ascii')
-    x = 0
-    while x < 26:
+    for x in range(26):
         roquefort = ""
         i=0
         while i< len(message):
             roquefort += fromage_de_bite(message[i], x) 
             i+=1
-        x+=1
-        if roquefort[0] == "a" and roquefort[1] == "H" and roquefort[2] == "o" :
-            t=3
-            roquefortaas=""
-            while t< len(message):
-                roquefortaas += roquefort[t] 
-                t+=1
-            return roquefortaas        
+        if roquefort[0] == "a" and roquefort[1] == "H" and roquefort[2] == "o":
+            return "".join(roquefort[t] for t in range(3, len(message)))        
     
     
     
