@@ -24,9 +24,9 @@ calipso crypt decrypt by Opale
 """
 printlent(Fore.CYAN+banner)
 
-while True : 
+while True: 
     rep = ""
-    while rep != "crypt" and rep != "decrypt":
+    while rep not in ["crypt", "decrypt"]:
         rep = str(input("crypt or decrypt :"))
     if rep == "crypt":
         coder = str(input("enter msg to crypt:"))
